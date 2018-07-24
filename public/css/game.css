@@ -9,12 +9,35 @@ main {
   font-family: 'Space Mono', monospace;
   width: 100%;
   height: 100% }
+  .menu {
+    position: absolute;
+    top: 10vmin;
+    background: #333;
+    color: #eee;
+    padding: .5rem 1rem 1rem;
+    text-align: center;
+    display: grid;
+    grid-gap: .3rem }
+  .score::before { content: 'Score: ' }
+  .highscore::before { content: 'Highscore: ' }
+  .hide { display: none }
+  .flash { color: #ff4136 }
   .board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /*auto-fit?*/
-    width: 0 }
+    width: 80vmin;
+    grid-gap: 4vmin;
+    padding: 10vmin;
+    margin: auto }
     .cell {
-        background: #eee;
-        width: 2em;
-        height: 2em;
-        margin: .3em }
+      background: #eee;
+      text-align: center }
+  .board.dim3 { grid-template-columns: repeat(auto-fill, minmax(24vmin, 1fr)) }
+    .board.dim3 > .cell {
+      width: 24vmin;
+      height: 24vmin;
+      line-height: 24vmin }
+  .board.dim4 { grid-template-columns: repeat(auto-fill, minmax(17vmin, 1fr)) }
+    .board.dim4 > .cell {
+      width: 17vmin;
+      height: 17vmin;
+      line-height: 17vmin }
